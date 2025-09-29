@@ -1,0 +1,63 @@
+-- member_details
+
+CREATE TABLE member_details (
+    member_id INT AUTO_INCREMENT PRIMARY KEY,
+    member_name VARCHAR(100),
+    member_password VARCHAR(255),
+    member_email VARCHAR(100),
+    member_type VARCHAR(100),
+    member_created TIMESTAMP,
+    member_report VARCHAR(2000)
+);
+
+-- librarian_details
+CREATE TABLE librarian_details (
+    librarian_id INT AUTO_INCREMENT PRIMARY KEY,
+    librarian_name VARCHAR(100),
+    librarian_password VARCHAR(255),
+    librarian_email VARCHAR(100),
+    librarian_created TIMESTAMP
+);
+
+
+-- admin_details
+CREATE TABLE admin_details (
+    admin_id INT AUTO_INCREMENT PRIMARY KEY,
+    admin_name VARCHAR(100),
+    admin_password VARCHAR(255),
+    admin_email VARCHAR(100)
+);
+
+-- book_details
+CREATE TABLE book_details (
+    book_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_title VARCHAR(2000),
+    book_genre VARCHAR(10),
+    book_author VARCHAR(500),
+    published_year YEAR 
+);
+
+CREATE TABLE borrow_return (
+    br_id INT AUTO_INCREMENT PRIMARY KEY,
+    issue_date DATE,
+    return_date DATE,
+    issue_status VARCHAR(100) DEFAULT 'Not Issued',
+    return_status VARCHAR(100) DEFAULT 'Not Returned',
+    mem_rt_date DATE,
+    member_id INT NOT NULL,
+    book_id INT NOT NULL,
+    FOREIGN KEY (member_id) REFERENCES member_details(member_id) ON DELETE CASCADE,
+    FOREIGN KEY (book_id) REFERENCES book_details(book_id) ON DELETE CASCADE
+);
+
+
+-- contact_messages
+CREATE TABLE contact_messages (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    subject VARCHAR(255) NOT NULL,
+    message TEXT NOT NULL,
+    created_at DATETIME NOT NULL
+);
+

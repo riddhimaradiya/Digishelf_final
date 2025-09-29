@@ -1,0 +1,30 @@
+-- Insert values to members
+INSERT INTO member_details (member_name, member_password, member_email, member_type) VALUES
+('Ana', '1234', 'ana@example.com', 'Regular'),
+('Suzy', '1234', 'suzy@example.com', 'Regular'),
+('Joe', '1234', 'bae@example.com', 'Premium'),
+('Rob', '1234', 'rob@example.com', 'Deluxe'),
+('Jay', '1234', 'jay@example.com', 'Regular');
+
+-- Insert values to librarian
+INSERT INTO librarian_details (librarian_name, librarian_password, librarian_email) VALUES
+('Jaben', '1234', 'jaben@gmail.com'),
+('Jihad', '1234', 'jihad@gmail.com'),
+('Hashi', '1234', 'hashi@gmail.com');
+
+-- Insert values to admin
+INSERT INTO admin_details (admin_name, admin_password, admin_email) VALUES ('srk', '1234', 'srk@gmail.com');
+
+-- Insert sample books 1900 and er ager value xampp nei na
+INSERT INTO book_details (book_title, book_genre, book_author, published_year) VALUES
+('Padma Nodi', 'Bangla', 'Humayun Ahmed', 1990),
+('Shesher Kobita', 'Bangla', 'Rabindranath Tagore', 1958),
+('The Alchemist', 'English', 'Paulo Coelho', 1988),
+('To Kill a Mockingbird', 'English', 'Harper Lee', 1960),
+('Chokher Bali', 'Bangla', 'Rabindranath Tagore', 1962),
+('1984', 'English', 'George Orwell', 1950),
+('Book a', 'Classic', 'a', 2000),
+('Book b', 'Romance', 'b', 2010);
+
+-- Report Type in admin profile
+You have delayed by one day, so a fine of 50 Taka is applicable. Further delays will result in additional fines per day. Kindly ensure timely and accurate work moving forward.
